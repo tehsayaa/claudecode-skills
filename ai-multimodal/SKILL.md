@@ -1,4 +1,4 @@
----
+﻿---
 name: ai-multimodal
 description: Process and generate multimedia content using Google Gemini API. Capabilities include analyze audio files (transcription with timestamps, summarization, speech understanding, music/sound analysis up to 9.5 hours), understand images (captioning, object detection, OCR, visual Q&A, segmentation), process videos (scene detection, Q&A, temporal analysis, YouTube URLs, up to 6 hours), extract from documents (PDF tables, forms, charts, diagrams, multi-page), generate images (text-to-image, editing, composition, refinement). Use when working with audio/video files, analyzing images or screenshots, processing PDF documents, extracting structured data from media, creating images from text prompts, or implementing multimodal AI features. Supports multiple models (Gemini 2.5/2.0) with context windows up to 2M tokens.
 license: MIT
@@ -47,6 +47,8 @@ Process audio, images, videos, documents, and generate images using Google Gemin
 - Format conversion (PDF to HTML/JSON)
 
 ### Image Generation
+- See specialized skill: image-generation/SKILL.md`n
+
 - Text-to-image generation
 - Image editing and modification
 - Multi-image composition (up to 3 images)
@@ -58,15 +60,15 @@ Process audio, images, videos, documents, and generate images using Google Gemin
 
 | Task | Audio | Image | Video | Document | Generation |
 |------|:-----:|:-----:|:-----:|:--------:|:----------:|
-| Transcription | ✓ | - | ✓ | - | - |
-| Summarization | ✓ | ✓ | ✓ | ✓ | - |
-| Q&A | ✓ | ✓ | ✓ | ✓ | - |
-| Object Detection | - | ✓ | ✓ | - | - |
-| Text Extraction | - | ✓ | - | ✓ | - |
-| Structured Output | ✓ | ✓ | ✓ | ✓ | - |
-| Creation | TTS | - | - | - | ✓ |
-| Timestamps | ✓ | - | ✓ | - | - |
-| Segmentation | - | ✓ | - | - | - |
+| Transcription | âœ“ | - | âœ“ | - | - |
+| Summarization | âœ“ | âœ“ | âœ“ | âœ“ | - |
+| Q&A | âœ“ | âœ“ | âœ“ | âœ“ | - |
+| Object Detection | - | âœ“ | âœ“ | - | - |
+| Text Extraction | - | âœ“ | - | âœ“ | - |
+| Structured Output | âœ“ | âœ“ | âœ“ | âœ“ | - |
+| Creation | TTS | - | - | - | âœ“ |
+| Timestamps | âœ“ | - | âœ“ | - | - |
+| Segmentation | - | âœ“ | - | - | - |
 
 ## Model Selection Guide
 
@@ -209,7 +211,7 @@ python scripts/document_converter.py \
 ### Images
 - PNG, JPEG, WEBP, HEIC, HEIF
 - Max 3,600 images per request
-- Resolution: ≤384px = 258 tokens, larger = tiled
+- Resolution: â‰¤384px = 258 tokens, larger = tiled
 
 ### Video
 - MP4, MPEG, MOV, AVI, FLV, MPG, WebM, WMV, 3GPP
@@ -259,6 +261,8 @@ For detailed implementation guidance, see:
   - Multi-page handling
 
 ### Image Generation
+- See specialized skill: image-generation/SKILL.md`n
+
 - `references/image-generation.md` - Text-to-image, editing
   - Prompt engineering strategies
   - Image editing and composition

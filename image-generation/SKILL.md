@@ -5,44 +5,50 @@ description: High-fidelity image generation for frontend assets using Google Nan
 
 # Image Generation (Nano Banana Pro)
 
-Dedicated skill for generating premium web assets, backgrounds, and UI elements using the **Google Nano Banana Pro** model suite.
+Dedicated skill for generating premium web assets using the **Google Nano Banana** model suite.
 
-##  Nano Banana Pro Specialties
-- **Micro-details**: Sharp 4K/8K resolution with emphasis on "nano-textures" (skin pores, fabric weave, liquid reflections).
-- **Premium Aesthetics**: Defaults to a sleek, high-end "Cyber-Tech" or "Glassmorphism" look if not specified.
-- **Banana Glow**: Subtle, warm highlights (Banana-yellow/Amber) that add depth to dark mode designs.
-- **Perfect Text**: Handles logos and labels with nearly 100% text accuracy.
+##  Direct API Access (CURL)
 
-##  Aspect Ratios
-- `1:1`: Profile icons, avatars.
-- `16:9` / `21:9`: Hero backgrounds, wide banners.
-- `9:16`: Mobile app screenshots, social covers.
-- `4:3`: Technical diagrams, blog headers.
+Use these commands to generate images directly. Base64 data is returned in the `inlineData` part of the response.
 
-##  UI Asset Recipes
-###  Premium Backgrounds
-> "Abstract glassmorphism background, soft stone and cream gradients, floating amber geometric shards, 85mm lens, f/1.4, cinematic bokeh, 4K."
+###  Nano Banana Pro (gemini-3-pro-image-preview)
+Best for: Professional asset production, complex text rendering, and advanced visual reasoning.
 
-###  Minimalist Logos
-> "Logomark for a modern AI company, 'G' initial, minimal line art, emerald green, vector style, white background, high contrast."
+```bash
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent?key=$GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+    "contents": [{
+      "parts": [{
+        "text": "Abstract glassmorphism background with soft amber and stone gradients, 4K, shallow depth of field, premium feel."
+      }]
+    }]
+  }'
+```
 
-###  Glass Icons
-> "3D glassmorphism icon of a 'Cloud', semi-transparent material, refractive index, soft studio lighting, high resolution."
+###  Nano Banana (gemini-2.5-flash-image)
+Best for: Rapid prototyping, simple icons, and low-latency tasks.
 
-##  Prompting Architecture
-For best results, use this structure:
-1. **Subject**: [Main focus]
-2. **Material/Style**: [Glass, Matte, Chrome, Vector]
-3. **Environment**: [Studio, Cyberpunk, Minimalist]
-4. **Lighting**: [Rim light, Golden hour, Soft box]
-5. **Technical**: [85mm, Macro, 4K, Ultra-detailed]
+```bash
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=$GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -X POST \
+  -d '{
+    "contents": [{
+      "parts": [{
+        "text": "Minimal sleek line art logo for a biotech clinic, emerald green on white background."
+      }]
+    }]
+  }'
+```
 
-##  Conversational Edits
-Unlike standard models, you can refine images iteratively:
-- *"Add a soft shadow below the logo container."*
-- *"Make the amber glow more intense on the left side."*
-- *"Replace the background with a blurred laboratory scene."*
+##  Asset Recipes
+- **Website Backgrounds**: *"Abstract glassmorphism, stone/cream gradients, amber shards, 85mm, f1.4, 4K."*
+- **Sleek Logos**: *"Minimal vector logomark, high contrast, clean edges, commercial aesthetic."*
+- **UI Icons**: *"3D glassmorphism icon, semi-transparent, refractive, soft studio lighting."*
 
-##  Reference
-- Documentation: `NANO_BANANA_GUIDE.md`
-- Core API: Gemini 3 Pro (Thinking Model)
+##  Technical Notes
+- **API Key**: Loaded from `.env` as `GEMINI_API_KEY`.
+- **Response**: The image data is in `candidates[0].content.parts[0].inlineData.data` as a Base64 string.
+- **Limits**: Nano Banana Pro (Gemini 3 Pro) allows for complex multi-step "Thinking" prompts.
