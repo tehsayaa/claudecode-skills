@@ -1,4 +1,4 @@
-# Design Resources & Tools
+﻿# Design Resources & Tools
 
 ## Inspiration Platforms
 
@@ -22,7 +22,7 @@ Search pattern: "Figma Design System + [style name]"
 ## AI Tools for Design
 
 ### Generation
-- **Gemini**: Image generation via ai-multimodal skill
+- **Gemini**: Image generation via `image-generation` skill
 - **Claude**: Design variations, component code
 
 ### Prompt Structure

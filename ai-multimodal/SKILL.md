@@ -47,30 +47,7 @@ Process audio, images, videos, documents, and generate images using Google Gemin
 - Format conversion (PDF to HTML/JSON)
 
 ### Image Generation
-- See specialized skill: image-generation/SKILL.md`n
-
-- Text-to-image generation
-- Image editing and modification
-- Multi-image composition (up to 3 images)
-- Iterative refinement
-- Multiple aspect ratios (1:1, 16:9, 9:16, 4:3, 3:4)
-- Controllable style and quality
-
-## Capability Matrix
-
-| Task | Audio | Image | Video | Document | Generation |
-|------|:-----:|:-----:|:-----:|:--------:|:----------:|
-| Transcription | âœ“ | - | âœ“ | - | - |
-| Summarization | âœ“ | âœ“ | âœ“ | âœ“ | - |
-| Q&A | âœ“ | âœ“ | âœ“ | âœ“ | - |
-| Object Detection | - | âœ“ | âœ“ | - | - |
-| Text Extraction | - | âœ“ | - | âœ“ | - |
-| Structured Output | âœ“ | âœ“ | âœ“ | âœ“ | - |
-| Creation | TTS | - | - | - | âœ“ |
-| Timestamps | âœ“ | - | âœ“ | - | - |
-| Segmentation | - | âœ“ | - | - | - |
-
-## Model Selection Guide
+- **Redirect**: For text-to-image generation (Nano Banana Pro), use the specialized [\image-generation\](../image-generation/SKILL.md) skill.
 
 ### Gemini 2.5 Series (Recommended)
 - **gemini-2.5-pro**: Highest quality, all features, 1M-2M context
@@ -261,15 +238,7 @@ For detailed implementation guidance, see:
   - Multi-page handling
 
 ### Image Generation
-- See specialized skill: image-generation/SKILL.md`n
-
-- `references/image-generation.md` - Text-to-image, editing
-  - Prompt engineering strategies
-  - Image editing and composition
-  - Aspect ratio selection
-  - Safety settings
-
-## Cost Optimization
+- **Redirect**: For text-to-image generation (Nano Banana Pro), use the specialized [\image-generation\](../image-generation/SKILL.md) skill.
 
 ### Token Costs
 **Input Pricing**:
@@ -359,3 +328,4 @@ Run any script with `--help` for detailed usage.
 - [Image Gen Docs](https://ai.google.dev/gemini-api/docs/image-generation)
 - [Get API Key](https://aistudio.google.com/apikey)
 - [Pricing](https://ai.google.dev/pricing)
+

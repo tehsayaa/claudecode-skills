@@ -1,4 +1,4 @@
----
+﻿---
 name: aesthetic
 description: Create aesthetically beautiful interfaces following proven design principles. Use when building UI/UX, analyzing designs from inspiration sites, generating design images with ai-multimodal, implementing visual hierarchy and color theory, adding micro-interactions, or creating design documentation. Includes workflows for capturing and analyzing inspiration screenshots with chrome-devtools and ai-multimodal, iterative design image generation until aesthetic standards are met, and comprehensive design system guidance covering BEAUTIFUL (aesthetic principles), RIGHT (functionality/accessibility), SATISFYING (micro-interactions), and PEAK (storytelling) stages. Integrates with chrome-devtools, ai-multimodal, media-processing, ui-styling, and web-frameworks skills.
 ---
@@ -21,7 +21,7 @@ Use when:
 ## Core Framework: Four-Stage Approach
 
 ### 1. BEAUTIFUL: Understanding Aesthetics
-Study existing designs, identify patterns, extract principles. AI lacks aesthetic sense—standards must come from analyzing high-quality examples and aligning with market tastes.
+Study existing designs, identify patterns, extract principles. AI lacks aesthetic senseâ€”standards must come from analyzing high-quality examples and aligning with market tastes.
 
 **Reference**: [`references/design-principles.md`](references/design-principles.md) - Visual hierarchy, typography, color theory, white space principles.
 
@@ -36,7 +36,7 @@ Incorporate subtle animations with appropriate timing (150-300ms), easing curves
 **Reference**: [`references/micro-interactions.md`](references/micro-interactions.md) - Duration guidelines, easing curves, performance optimization.
 
 ### 4. PEAK: Storytelling Through Design
-Elevate with narrative elements—parallax effects, particle systems, thematic consistency. Use restraint: "too much of anything isn't good."
+Elevate with narrative elementsâ€”parallax effects, particle systems, thematic consistency. Use restraint: "too much of anything isn't good."
 
 **Reference**: [`references/storytelling-design.md`](references/storytelling-design.md) - Narrative elements, scroll-based storytelling, interactive techniques.
 
@@ -74,7 +74,7 @@ Elevate with narrative elements—parallax effects, particle systems, thematic c
    - Identify specific weaknesses (color, typography, layout, spacing, hierarchy)
    - Refine prompt with improvements
    - Regenerate with **ai-multimodal** or use **media-processing** skill to modify outputs (resize, crop, filters, composition)
-5. Repeat until aesthetic standards met (score ≥ 7/10)
+5. Repeat until aesthetic standards met (score â‰¥ 7/10)
 6. Document final design decisions using templates
 
 ## Design Documentation
@@ -113,9 +113,9 @@ Save in project `./docs/design-story.md`.
 
 ## Key Principles
 
-1. Aesthetic standards come from humans, not AI—study quality examples
-2. Iterate based on analysis—never settle for first output
+1. Aesthetic standards come from humans, not AIâ€”study quality examples
+2. Iterate based on analysisâ€”never settle for first output
 3. Balance beauty with functionality and accessibility
 4. Document decisions for consistency across development
-5. Use progressive disclosure in design—reveal complexity gradually
-6. Always evaluate aesthetic quality objectively (score ≥ 7/10)
+5. Use progressive disclosure in designâ€”reveal complexity gradually
+6. Always evaluate aesthetic quality objectively (score â‰¥ 7/10)
