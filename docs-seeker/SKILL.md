@@ -1,6 +1,6 @@
 ---
 name: docs-seeker
-description: "Searching internet for technical documentation using llms.txt standard, GitHub repositories via Repomix, and parallel exploration. Use when user needs: (1) Latest documentation for libraries/frameworks, (2) Documentation in llms.txt format, (3) GitHub repository analysis, (4) Documentation without direct llms.txt support, (5) Multiple documentation sources in parallel"
+description: "Searching internet for technical documentation using Z.ai MCP Search server, llms.txt standard, GitHub repositories via Repomix, and parallel exploration. Use when user needs: (1) Latest documentation for libraries/frameworks, (2) Documentation in llms.txt format, (3) GitHub repository analysis, (4) Documentation without direct llms.txt support, (5) Multiple documentation sources in parallel. Uses Z.ai webSearchPrime for rich, filtered search results."
 version: 1.0.0
 ---
 
@@ -10,7 +10,7 @@ version: 1.0.0
 
 Intelligent discovery and analysis of technical documentation through multiple strategies:
 
-1. **llms.txt-first**: Search for standardized AI-friendly documentation
+1. **llms.txt-first**: Search for standardized AI-friendly documentation using **Z.ai MCP Search**
 2. **Repository analysis**: Use Repomix to analyze GitHub repositories
 3. **Parallel exploration**: Deploy multiple Explorer agents for comprehensive coverage
 4. **Fallback research**: Use Researcher agents when other methods unavailable
@@ -58,9 +58,12 @@ Intelligent discovery and analysis of technical documentation through multiple s
    - https://context7.com/websites/ffmpeg_doxygen_8_0/llms.txt?topic=compress
    ```
 
-   **Fallback: Traditional llms.txt search**
+   **Fallback: Traditional llms.txt search using Z.ai MCP**
    ```
-   WebSearch: "[library name] llms.txt site:[docs domain]"
+   Use Z.ai MCP `webSearchPrime`:
+   - Query: "[library name] llms.txt site:[docs domain]"
+   - Add domain filter for official docs: search_domain_filter="[docs domain]"
+   - Set recency filter for latest docs: search_recency_filter="oneMonth"
    ```
    Common patterns:
    - `https://docs.[library].com/llms.txt`
@@ -156,7 +159,10 @@ Launch 3 Explorer agents simultaneously:
 ## Quick Reference
 
 **Tool selection:**
-- WebSearch → Find llms.txt URLs, GitHub repositories
+- **Z.ai MCP `webSearchPrime`** → Find llms.txt URLs, GitHub repositories with domain filtering
+  - Use `search_domain_filter` to limit to official docs
+  - Use `search_recency_filter` for latest documentation
+  - Use `content_size="high"` for detailed summaries
 - WebFetch → Read single documentation pages
 - Task (Explore) → Multiple URLs, parallel exploration
 - Task (Researcher) → Scattered documentation, diverse sources

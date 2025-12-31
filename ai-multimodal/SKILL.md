@@ -1,6 +1,6 @@
 ﻿---
 name: ai-multimodal
-description: Process and generate multimedia content using Google Gemini API. Capabilities include analyze audio files (transcription with timestamps, summarization, speech understanding, music/sound analysis up to 9.5 hours), understand images (captioning, object detection, OCR, visual Q&A, segmentation), process videos (scene detection, Q&A, temporal analysis, YouTube URLs, up to 6 hours), extract from documents (PDF tables, forms, charts, diagrams, multi-page), generate images (text-to-image, editing, composition, refinement). Use when working with audio/video files, analyzing images or screenshots, processing PDF documents, extracting structured data from media, creating images from text prompts, or implementing multimodal AI features. Supports multiple models (Gemini 2.5/2.0) with context windows up to 2M tokens.
+description: Process audio, video, and documents using Google Gemini API. Use Z.ai MCP Vision tools for image understanding, OCR, and specialized vision tasks (ui_to_artifact, extract_text_from_screenshot, diagnose_error_screenshot, understand_technical_diagram, analyze_data_visualization, ui_diff_check). Capabilities include analyze audio files (transcription with timestamps, summarization, speech understanding, music/sound analysis up to 9.5 hours), process videos (scene detection, Q&A, temporal analysis, YouTube URLs, up to 6 hours), extract from documents (PDF tables, forms, charts, diagrams, multi-page). Use when working with audio/video files, processing PDF documents, extracting structured data from media, or implementing multimodal AI features. For image/OCR tasks, use Z.ai MCP Vision tools instead. Supports multiple models (Gemini 2.5/2.0) with context windows up to 2M tokens.
 license: MIT
 allowed-tools:
   - Bash
@@ -11,7 +11,7 @@ allowed-tools:
 
 # AI Multimodal Processing Skill
 
-Process audio, images, videos, documents, and generate images using Google Gemini's multimodal API. Unified interface for all multimedia content understanding and generation.
+Process audio, video, and documents using Google Gemini's multimodal API. For image understanding, OCR, and specialized vision tasks, use **Z.ai MCP Vision tools** instead.
 
 ## Core Capabilities
 
@@ -22,17 +22,20 @@ Process audio, images, videos, documents, and generate images using Google Gemin
 - Music and environmental sound analysis
 - Text-to-speech generation with controllable voice
 
-### Image Understanding
-- Image captioning and description
-- Object detection with bounding boxes (2.0+)
-- Pixel-level segmentation (2.5+)
-- Visual question answering
-- Multi-image comparison (up to 3,600 images)
-- OCR and text extraction
+### Image Understanding ⚠️ **REDIRECT**
+- **Redirect**: Use **Z.ai MCP Vision tools** via `mcp__zai-mcp-server` for all image/OCR tasks:
+  - **General image understanding**: `analyze_image` - Captions, descriptions, visual Q&A
+  - **OCR & text extraction**: `extract_text_from_screenshot` - Code, terminals, documents
+  - **Error diagnosis**: `diagnose_error_screenshot` - Analyze errors & propose fixes
+  - **Technical diagrams**: `understand_technical_diagram` - Architecture, UML, ER diagrams
+  - **Data visualizations**: `analyze_data_visualization` - Charts, graphs, dashboards
+  - **UI comparison**: `ui_diff_check` - Compare two UI screenshots
+  - **UI to code**: `ui_to_artifact` - Convert UI to code/prompts/specs
+- **Why Z.ai MCP?**: Specialized tools, better accuracy, no API key management
 
 ### Video Analysis
-- Scene detection and summarization
-- Video Q&A with temporal understanding
+- **Understanding**: Use **Z.ai MCP `analyze_video`** for scene detection, action recognition
+- **Transcription**: Use Gemini for audio track transcription with timestamps
 - Transcription with visual descriptions
 - YouTube URL support
 - Long video processing (up to 6 hours)
