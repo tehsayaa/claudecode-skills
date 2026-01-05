@@ -1,10 +1,15 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
+description: Create distinctive, production-grade frontend interfaces with high design quality and automatic image sourcing. Use this skill when building web components, pages, or applications. Generates creative, polished code with real images from Unsplash/Pexels via web search or AI-generated images via image-generation skill. Avoids generic AI aesthetics.
 license: Complete terms in LICENSE.txt
+allowed-tools:
+  - Bash
+  - Read
+  - Write
+  - Edit
 ---
 
-This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+This skill guides creation of distinctive, production-grade frontend interfaces with automatic image acquisition. Use web search tools to find real images from Unsplash, Pexels, and other stock photo sites, or leverage image-generation skill for custom AI-generated assets. Implement real working code with exceptional attention to aesthetic details.
 
 The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
@@ -39,4 +44,35 @@ Interpret creatively and make unexpected choices that feel genuinely designed fo
 
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 
-Remember: Claude is capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+## Image & Visual Asset Requirements
+
+### Mandatory Image Sourcing
+
+Every design MUST include real, high-quality images. NEVER use placeholders or generic lorem ipsum images.
+
+**Image Acquisition Strategy (in priority order)**:
+
+1. **Search Unsplash/Pexels via web search tools**:
+   - Query: `"site:unsplash.com [topic] [style]"` or `"site:pexels.com [topic] [style]"`
+   - Unsplash URL format: `https://images.unsplash.com/photo-[id]?w=[width]&h=[height]&fit=crop`
+   - Common dimensions: w=1920&h=1080 (hero), w=800&h=600 (cards), w=400&h=400 (thumbnails)
+
+2. **AI-generated images via image-generation skill**:
+   - Use when stock photos don't fit the vision
+   - Specify dimensions (16:9 for hero, 1:1 for cards, 9:16 for mobile)
+   - Match design tokens with `--include-css-vars` flag
+   - Define style (glassmorphism, minimal, photorealistic, abstract)
+
+3. **Custom graphics**:
+   - SVG patterns, CSS gradients, geometric shapes
+   - Noise textures, mesh gradients, generative art
+
+**Quality Standards**:
+- Minimum 1200px width for hero, 800px for features
+- Optimize file size <500KB per image
+- Include descriptive alt text for ALL images
+- Images must align with the aesthetic direction
+- Use consistent visual style throughout
+
+**Background Requirements**:
+Always add visual depth—gradients, noise overlays, patterns, or textured images. Never use flat solid colors alone.
